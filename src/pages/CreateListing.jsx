@@ -176,6 +176,7 @@ function CreateListing() {
     //no offer
     !formDataCopy.offer && delete formDataCopy.discountedPrice
 
+    //save listing into firestore
     const docRef = await addDoc(collection(db, 'listings'), formDataCopy)
     setLoading(false)
     toast.success('Listing saved')
