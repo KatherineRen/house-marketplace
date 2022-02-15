@@ -11,10 +11,11 @@ function ListingItem({ listing, id, onDelete }) {
         className='categoryListingLink'
       >
         <img
-          src={listing.imageUrls[0]}
+          src={listing.imgUrls[0]}
           alt={listing.name}
           className='categoryListingImg'
         />
+
         <div className='categoryListingDetails'>
           <p className='categoryListingLocation'>{listing.location}</p>
           <p className='categoryListingName'>{listing.name}</p>
