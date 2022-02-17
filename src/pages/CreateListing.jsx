@@ -56,7 +56,7 @@ function CreateListing() {
     if (isMounted) {
       onAuthStateChanged(auth, (user) => {
         if (user) {
-          setFormData({ ...formData, useRef: user.uid })
+          setFormData({ ...formData, userRef: user.uid })
         } else {
           navigate('/sign-in')
         }
@@ -108,7 +108,7 @@ function CreateListing() {
         return
       }
 
-      console.log(data)
+      // console.log(data)
     } else {
       geolocation.lat = latitude
       geolocation.lng = longitude
