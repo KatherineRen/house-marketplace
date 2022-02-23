@@ -1,4 +1,4 @@
-import { useState, useEffec, useRef } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { getAuth, onAuthStateChanged } from 'firebase/auth'
 import {
   getStorage,
@@ -10,11 +10,11 @@ import { addDoc, collection, serverTimestamp } from 'firebase/firestore'
 import { db } from '../firebase.config'
 import { useNavigate } from 'react-router-dom'
 import Spinner from '../components/Spinner'
-import { useEffect } from 'react/cjs/react.development'
 import { toast } from 'react-toastify'
 import { v4 as uuidv4 } from 'uuid'
 
 function CreateListing() {
+  // eslint-disable-next-line no-unused-vars
   const [geolocationEnabled, setGeolocationEnabled] = useState(true)
   const [loading, setLoading] = useState(false)
   const [formData, setFormData] = useState({
@@ -66,6 +66,7 @@ function CreateListing() {
     return () => {
       isMounted.current = false
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isMounted])
 
   const onSumbit = async (e) => {
@@ -135,6 +136,8 @@ function CreateListing() {
                 break
               case 'running':
                 console.log('Upload is running')
+                break
+              default:
                 break
             }
           },
