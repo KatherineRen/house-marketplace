@@ -40,6 +40,7 @@ function Slider() {
     return <Spinner />
   }
 
+  // no listing
   if (listings.length === 0) {
     return <></>
   }
